@@ -8,9 +8,13 @@ URL: https://github.com/simta
 Source0: https://github.com/simta/simta-mscan/archive/%{name}-%{version}.tar.gz
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: bash >= 3.0
+BuildRequires: setup
 
 %description
 simta-mscan is used to filter incoming mail
+
+%prep
+%setup
 
 %install
 install -m 755 -d %{buildroot}%{_sbindir} %{buildroot}%{_sysconfdir}/mail/filters
