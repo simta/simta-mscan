@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 # content filter hub, sources /etc/mail/filters
 
 PATH=/bin:/usr/bin/:/sbin:/usr/sbin:/usr/local/sbin
@@ -30,12 +30,12 @@ filter_exit() {
 # logging function
 # usage: log <log msg>
 log() {
-    if [[ ${#SIMTA_CID} -eq 0 ]]; then
+    if [ ${#SIMTA_CID} -eq 0 ]; then
 	pid="$PPID"
     else
 	pid="$PPID.$SIMTA_CID"
     fi
-    if [[ $# -eq 0 ]]; then
+    if [ $# -eq 0 ]; then
 	logger -p mail.info -t "simta[$pid]: mscan"
     else
 	logger -p mail.info -t "simta[$pid]: mscan" "$*"
@@ -54,7 +54,7 @@ check_env() {
 # check SIMTA_DFILE - path to message's Dfile
 # may want to do additional checks in this function
 check_dfile() {
-    if [[ -z $SIMTA_DFILE ]]; then
+    if [ -z $SIMTA_DFILE ]; then
 	return 1
     else
 	return 0
@@ -64,18 +64,16 @@ check_dfile() {
 # check SIMTA_TFILE - path to message's tfile
 # may want to do additional checks in this function
 check_tfile() {
-    if [[ -z $SIMTA_TFILE ]]; then
+    if [ -z $SIMTA_TFILE ]; then
 	return 1
     else
 	return 0
     fi
 }
 
-if [[ -d $filters ]]; then
-    for script in $(ls $filters); do
-	if [[ -x ${filters}/${script} ]]; then
-	    . ${filters}/${script}
-	fi
+if [ -d $filters ]; then
+    for filter in ${filters}/* ; do
+	[ -x $filter ] && . $filter
     done
 fi
 

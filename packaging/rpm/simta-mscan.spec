@@ -1,13 +1,13 @@
 Summary: A simple modular filter script for simta
 Name: simta-mscan
-Version: 1.3
+Version: 1.4
 Release: 1%{?dist}
 License: BSD
 Group: Applications/Internet
 URL: https://github.com/simta
 Source0: https://github.com/simta/simta-mscan/archive/%{name}-%{version}.tar.gz
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-Requires: bash >= 3.0
+Requires: dash >= 0.5
 BuildRequires: setup
 
 %description
