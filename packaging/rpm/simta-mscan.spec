@@ -5,7 +5,7 @@ Release: 1%{?dist}
 License: BSD
 Group: Applications/Internet
 URL: https://github.com/simta
-Source0: https://github.com/simta/simta-mscan/archive/%{name}-%{version}.tar.gz
+Source0: https://github.com/simta/simta-mscan/releases/download/%{version}/%{name}-%{version}.tar.gz
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: dash >= 0.5
 BuildRequires: setup
