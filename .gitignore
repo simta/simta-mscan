@@ -1,0 +1,13 @@
+.deps/
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+simta-mscan-*.tar.gz
+config.log
+config.status
+configure
+depcomp
+install-sh
+missing
+packaging/rpm/simta-mscan.spec

@@ -1,6 +1,6 @@
 Summary: A simple modular filter script for simta
-Name: simta-mscan
-Version: 1.4
+Name: @PACKAGE_NAME@
+Version: @PACKAGE_VERSION@
 Release: 1%{?dist}
 License: BSD
 Group: Applications/Internet
@@ -16,9 +16,12 @@ simta-mscan is used to filter incoming mail
 %prep
 %setup
 
+%build
+%configure
+
 %install
+make DESTDIR=%{buildroot} install
 install -m 755 -d %{buildroot}%{_sbindir} %{buildroot}%{_sysconfdir}/mail/filters
-install -m 755 simta-mscan %{buildroot}%{_sbindir}/simta-mscan
 
 %files
 %defattr(-,root,root,-)
