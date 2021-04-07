@@ -8,6 +8,7 @@ Source0: https://github.com/simta/simta-mscan/releases/download/%{version}/%{nam
 Requires: dash >= 0.5
 BuildRequires: setup
 BuildArch: noarch
+Autoreq: 0
 
 %description
 simta-mscan is used to filter incoming mail
