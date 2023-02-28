@@ -7,11 +7,11 @@ on the content filter interface used by simta can be found
 
 `simta-mscan` is a POSIX-compliant shell script
 that is designed to run under the [Debian Almquist
-shell](https://git.kernel.org/pub/scm/utils/dash/dash.git/) The script
-does not actually do any filtering itself, it sources individual
-filters (which must also be written in POSIX-compliant shell) from
-`/etc/mail/filters`. These filters must be marked as executable and
-will be run in lexicographic order.
+shell](https://git.kernel.org/pub/scm/utils/dash/dash.git/). The
+script does not actually do any filtering itself, it sources
+individual filters (which must also be written in POSIX-compliant
+shell) from `/etc/mail/filters`. These filters must be marked as
+executable and will be run in lexicographic order.
 
 An example filter might look something like this:
 
