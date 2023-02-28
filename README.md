@@ -25,7 +25,7 @@ if [ "x$from_domain" = 'xexample.com' ] || [ "x${from_domain#*.}" = 'xexample.co
 fi
 
 if check_tfile; then
-    grep -q 'XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X' $SIMTA_TFILE
+    fgrep -q 'XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X' $SIMTA_TFILE
     if [ $? -eq 0 ]; then
         log "10_testfilter: found GTUBE"
         filter_exit $MESSAGE_REJECT
