@@ -13,7 +13,7 @@ individual filters (which must also be written in POSIX-compliant
 shell) from `/etc/mail/filters`. These filters must be marked as
 executable and will be run in lexicographic order.
 
-An example filter might look something like this:
+## Filter example
 
 ```sh
 #!/bin/dash
